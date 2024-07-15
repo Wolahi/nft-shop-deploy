@@ -1,0 +1,32 @@
+@import "/src/styles/utils/variables";
+.inner {
+  position: relative;
+  padding: 20px;
+  min-width: 300px;
+}
+
+.header {
+  position: relative;
+  width: 100%;
+  background-color: $black;
+  height: 70px;
+  &__content {
+    display: flex;
+    gap:20px;
+    align-items: center;
+  }
+  &__logoContainer {
+    display: flex;
+    align-items: center;
+  }
+  &__logo{
+    position: relative;
+  }
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 4vw;
+    font-family: $fontSlogan;
+    color: $white;
+  }
+}
