@@ -1,15 +1,13 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import './App.css'
+import "./App.css";
 import MainPage from "../pages/MainPage/ui/MainPage.tsx";
+import AppRouter from "./router/AppRouter.tsx";
 
 const App = () => {
   return (
-      <Router>
-          <Routes>
-              <Route path="/" element={<MainPage />}></Route>
-          </Routes>
-      </Router>
-  )
-}
+    <div>
+      <MainPage content={<AppRouter />} />
+    </div>
+  );
+};
 
-export default App
+export default App;

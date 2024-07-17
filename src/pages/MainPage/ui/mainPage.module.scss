@@ -14,6 +14,7 @@
   &__leftPart{
     display: flex;
     align-items: center;
+    gap: 4vh;
   }
   &__rightPart{
     display: flex;
@@ -89,11 +90,20 @@
   .ant-layout-header {
     padding: 0 30px 0 30px;
   }
+  .ant-layout-sider {
+    flex: 0 0 249px !important;
+    max-width: unset !important;
+  }
   .ant-menu {
     background-color: $black;
     color: $white;
-    font-family: $font;
-    font-size: 16px;
+    font: 500 16px $font;
+    //font-family: $font;
+    //font-size: 16px;
+    //font-weight: 500;
+
+    line-height: 23.71px;
+    width: 249px;
   }
   .ant-menu-horizontal {
     padding: 0 0 0 11vh !important;
@@ -105,10 +115,15 @@
   }
   .ant-menu-title-content {
     color: $white;
+    font: 400 16px $font;
   }
   .ant-menu-submenu-title {
     border-bottom: solid $underline 1px;
     border-radius: 0 !important;
+    font: 500 16px $font;
+    .ant-menu-title-content{
+      font: 500 16px $font !important;
+    }
   }
   .ant-menu-submenu-arrow {
     color: $white !important;
@@ -121,6 +136,8 @@
     text-decoration-color: $lime;
     .ant-menu-title-content {
       color: $lime !important;
+      font: 500 16px $font !important;
+
     }
   }
 }

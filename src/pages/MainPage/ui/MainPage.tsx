@@ -6,17 +6,16 @@ import Note from "../../../assets/note.svg?react";
 import Pay from "../../../assets/pay.svg?react";
 import Photo from "../../../assets/DefaultPhoto.svg?react";
 
-import React from "react";
 import type { MenuProps } from "antd";
 import { Layout, Menu, theme } from "antd";
 import SearchForm from "../../../entity/SearchForm/ui/SearchForm.tsx";
+import { ReactElement } from "react";
 
 const { Header, Content, Sider } = Layout;
-
 const items1: MenuProps["items"] = ["Dashboard", "About Us", "FAQ"].map(
   (key) => ({
     key,
-    label: `${key}`,
+    label: ` ${key}`,
   }),
 );
 
@@ -31,7 +30,7 @@ const items2: MenuProps["items"] = [
   return {
     key,
     label: ` ${key}`,
-
+    onClick: () => console.log("onclick"),
     children: new Array(4).fill(null).map((_, j) => {
       const subKey = index * 4 + j + 1;
       return {
@@ -42,7 +41,7 @@ const items2: MenuProps["items"] = [
   };
 });
 
-const MainPage: React.FC = () => {
+const MainPage = ({ content }: { content: ReactElement }) => {
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -89,11 +88,13 @@ const MainPage: React.FC = () => {
       <Content className={styles.main__content}>
         <Layout className={styles.main__layout}>
           <Sider style={{ background: colorBgContainer }} width={200}>
-            <Menu mode="inline" style={{ height: "100%" }} items={items2} />
+            <Menu
+              mode="inline"
+              style={{ height: "100%", font: "500 16px $font" }}
+              items={items2}
+            />
           </Sider>
-          <Content style={{ padding: "0 24px", minHeight: 280 }}>
-            <div className={styles.main__shopContent}>Content</div>
-          </Content>
+          <Content>{content}</Content>
         </Layout>
       </Content>
     </Layout>
