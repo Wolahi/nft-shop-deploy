@@ -3,8 +3,8 @@
   &__Card {
     width: 258px;
     height: 331px;
-    background-color: $nftCard;
-    border-radius: 5px;
+    background-color: var(--nftCard);
+    border-radius: 10px;
   }
   &__body {
     display: flex;
@@ -30,32 +30,32 @@
   &__Title {
     font: 500 18px/1.1 $font;
     line-height: 26.68px;
-    color: $lime;
+    color: var(--limeBlack);
   }
   &__Author{
     font: 400 14px/1.1 $font;
     line-height: 20.75px;
-    color: $gray;
+    color: var(--grayBlue);
   }
   &__priceBlock {
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 15px 18px 18px 18px;
-    color: $lime;
+    color: var(--limeBlack);
     font: 400 14px $font;
     line-height: 20.75px;
-    border-top: solid $underline 1px;
+    border-top: solid var(--underline) 1px;
   }
   &__blurContainer {
     position: absolute;
     width: 77px;
     height: 29px;
-    border: solid 1px $lime;
+    border: solid 1px var(--blur);
     border-radius: 28px;
-    -moz-box-shadow:0 0 10px $lime;
-    -webkit-box-shadow:0 0 10px $lime;
-    box-shadow:0 0 20px $lime;
+    -moz-box-shadow:0 0 10px var(--blur);
+    -webkit-box-shadow:0 0 10px var(--blur);
+    box-shadow:0 0 20px var(--blur);
     filter: opacity(10%);
   }
   &__priceContainer {
@@ -64,9 +64,85 @@
     justify-content: center;
     width: 77px;
     height: 29px;
-    border: solid 1px $lime;
+    border: solid 1px var(--limeBlack);
     border-radius: 28px;
-    filter: unset !important;
-
+    cursor: pointer;
+  }
+  &__CardL {
+    height: 210px;
+    width: 1090px;
+    background-color: var(--nftCard);
+    border-radius: 20px;
+  }
+  &__PhotoL {
+    width: 350px;
+    height: auto;
+    border-radius: 20px;
+  }
+  &__bodyL {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  &__titleL {
+    font: 500 34px $font;
+    color: var(--limeBlack);
+  }
+  &__AuthorL{
+    font: 400 24px/1.1 $font;
+    line-height: 20.75px;
+    color: var(--grayBlue);
+  }
+  &__contentL {
+    display: flex;
+    flex-direction: row;
+  }
+  &__textL {
+    display: flex;
+    flex-direction: column ;
+    padding: 10px;
+  }
+  &__priceBlockL {
+    display: flex;
+    padding: 15px 18px 18px 18px;
+    color: var(--limeBlack);
+    font: 400 14px $font;
+    line-height: 20.75px;
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 20px;
+  }
+  &__priceContentL {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  &__priceTypeL{
+font-size: 24px;
+  }
+  &__priceContainerL {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 112px;
+    height: 35px;
+    border: solid 1px var(--limeBlack);
+    border-radius: 28px;
+    cursor: pointer;
+  }
+  &__blurContainerL {
+    position: absolute;
+    width: 112px;
+    height: 35px;
+    border: solid 1px var(--blur);
+    border-radius: 28px;
+    -moz-box-shadow:0 0 10px var(--blur);
+    -webkit-box-shadow:0 0 10px var(--blur);
+    box-shadow:0 0 20px var(--blur);
+    filter: opacity(10%);
+  }
+  &__priceL {
+    font-size: 24px;
   }
 }

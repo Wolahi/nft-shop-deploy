@@ -1,0 +1,71 @@
+@import "/src/styles/utils/variables";
+
+.form {
+  &__Btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    height: 33px;
+    border-radius: 4px;
+    background-color: var(--pathSelect);
+    color: black;
+    font: $font !important;
+  }
+  &__btnText {
+    font: 500 14px $font;
+    line-height: 20.75px;
+    color: var(--wrapper);
+  }
+  &__input {
+    padding-left: 17px;
+    border: none !important;
+    background-color: var(--Container);
+  }
+}
+:global {
+  .ant-input {
+    color: var(--gray) !important;
+    font-family: $font !important;
+    font-size: 14px !important;
+    :focus {
+      color: red !important;
+    }
+  }
+  ::placeholder {
+    display: flex;
+    align-items: center;
+    color: var(--gray) !important;
+    font-size: 14px;
+  }
+  .ant-btn-primary {
+    background-color: var(--SelectColor) !important;
+  }
+  .ant-modal-title {
+    background: var(--bg);
+    color: var(--text) !important;
+  }
+  .ant-modal-content {
+    background: var(--bg) !important;
+    font-family: $font !important;
+    color: var(--text);
+
+  }
+  .ant-modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  .ant-modal-close {
+    color: var(--text) !important;
+  }
+  .ant-modal-footer {
+    * span {
+      font-family: $font !important;
+      color: var(--wrapper) !important;
+    }
+  }
+  .ant-btn {
+    font: $font !important;
+  }
+}

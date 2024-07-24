@@ -7,7 +7,7 @@ html {
 }
 body {
   margin: 0;
-  background-color: $bg;
+  background-color: var(--bg);
 }
 main {
   display: block;

@@ -18,6 +18,7 @@ const SearchForm = (props: any) => {
         size="large"
         prefix={<Lens />}
         placeholder="Search artwork"
+        value={value}
         className={styles.form__input}
       />
     </form>

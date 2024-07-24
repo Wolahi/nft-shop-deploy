@@ -1,20 +1,25 @@
 @import "/src/styles/utils/variables";
 
 .main {
-  background-color: $bg;
+  background-color: var(--bg);
+  &__logo {
+    path{
+      fill: var(--logo);
+    }
+  }
 
   &__header {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: 70px;
-    background-color: $black;
-    border-bottom: solid $underline 1px;
+    background-color: var(--wrapper);
+    border-bottom: solid var(--underline) 1px;
   }
   &__leftPart{
     display: flex;
     align-items: center;
-    gap: 4vh;
+    gap: 50px;
   }
   &__rightPart{
     display: flex;
@@ -44,7 +49,7 @@
     width: 30px;
     height: 30px;
     border-radius: 15px;
-    background-color: $Container;
+    background-color: var(--Container);
   }
   &__profileContainer {
     display: flex;
@@ -59,7 +64,7 @@
   }
   &__profileName {
     font-family: $font;
-    color: $white;
+    color: var(--text);
     width: auto;
   }
 
@@ -71,18 +76,18 @@
   &__layout {
     //padding: 24px 0;
     height: 100%;
-    background-color: $bg;
+    background-color: var(--bg);
   }
   &__menu {
     display: flex;
     align-items: center;
     gap: 30px;
     font-family: $font;
-    background-color: $black;
+    background-color: var(--wrapper);
   }
   &__shopContent {
     font-family: $font;
-    color: $white;
+    color: var(--text);
   }
 }
 
@@ -95,8 +100,8 @@
     max-width: unset !important;
   }
   .ant-menu {
-    background-color: $black;
-    color: $white;
+    background-color: var(--wrapper);
+    color: var(--text);
     font: 500 16px $font;
     //font-family: $font;
     //font-size: 16px;
@@ -111,14 +116,14 @@
   }
   .ant-menu-inline {
     padding-top: 5vh;
-    border-right: solid $underline 1px !important;
+    border-right: solid var(--underline) 1px !important;
   }
   .ant-menu-title-content {
-    color: $white;
+    color: var(--text);
     font: 400 16px $font;
   }
   .ant-menu-submenu-title {
-    border-bottom: solid $underline 1px;
+    border-bottom: solid var(--underline) 1px;
     border-radius: 0 !important;
     font: 500 16px $font;
     .ant-menu-title-content{
@@ -126,16 +131,17 @@
     }
   }
   .ant-menu-submenu-arrow {
-    color: $white !important;
+    color: var(--text)
+    !important;
   }
   .ant-menu-item-selected {
     background-color: unset !important;
     text-decoration: underline;
     text-underline-offset: 26px;
     text-decoration-thickness: 3px;
-    text-decoration-color: $lime;
+    text-decoration-color: var(--SelectColor);
     .ant-menu-title-content {
-      color: $lime !important;
+      color: var(--pathSelect) !important;
       font: 500 16px $font !important;
 
     }

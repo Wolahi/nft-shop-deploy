@@ -10,6 +10,7 @@ import type { MenuProps } from "antd";
 import { Layout, Menu, theme } from "antd";
 import SearchForm from "../../../entity/SearchForm/ui/SearchForm.tsx";
 import { ReactElement } from "react";
+import { useTheme } from "../../../features/hooks/useTheme/useTheme.ts";
 
 const { Header, Content, Sider } = Layout;
 const items1: MenuProps["items"] = ["Dashboard", "About Us", "FAQ"].map(
@@ -42,6 +43,15 @@ const items2: MenuProps["items"] = [
 });
 
 const MainPage = ({ content }: { content: ReactElement }) => {
+  const { currTheme, setTheme } = useTheme();
+  const handleTheme = () => {
+    if (currTheme === "light") {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
   const {
     token: { colorBgContainer },
   } = theme.useToken();
@@ -50,7 +60,7 @@ const MainPage = ({ content }: { content: ReactElement }) => {
     <Layout>
       <Header className={styles.main__header}>
         <div className={styles.main__leftPart}>
-          <Logo></Logo>
+          <Logo className={styles.main__logo}></Logo>
           <Menu
             theme="dark"
             mode="horizontal"
@@ -69,7 +79,7 @@ const MainPage = ({ content }: { content: ReactElement }) => {
               <div className={styles.main__iconsItem}>
                 <Mail />
               </div>
-              <div className={styles.main__iconsItem}>
+              <div className={styles.main__iconsItem} onClick={handleTheme}>
                 <Note />
               </div>
               <div className={styles.main__iconsItem}>

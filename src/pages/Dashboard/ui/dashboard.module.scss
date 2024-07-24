@@ -3,7 +3,7 @@
 .db {
   &__body {
     font-family: $font;
-    color: $white;
+    color: var(--white);
     padding: 55px 30px 30px 20px;
   }
 
@@ -25,16 +25,6 @@
     align-items: center;
   }
 
-  &__createBtn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 125px;
-    height: 33px;
-    border-radius: 4px;
-    background-color: $lime;
-    color: black;
-  }
 
   &__headBottom {
     display: flex;
@@ -48,13 +38,73 @@
 
   &__sort {
     display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    width: 87px;
+    height: 37px;
+    background-color: var(--Container);
+    cursor: pointer;
+  }
+  &__gridSort {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 37px;
+    border-radius: 10px 0  0 10px;
+    background-color: unset;
+  }
+  &__gridSelected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 37px;
+    border-radius: 10px 0  0 10px;
+    background-color: var(--sortSwitch);
+  }
+  &__listSelected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 37px;
+    border-radius: 0 10px  10px 0;
+    background-color: var(--sortSwitch);
+  }
+  &__gridIcon {
+    path{
+      fill: var(--text);
+    }
+  }
+  &__gridIselected {
+    path{
+      fill: var(--SelectColor);
+    }
+  }
+  &__listIcon {
+    path{
+      fill: var(--text);
+    }
+  }
+  &__listIselected {
+    path{
+      fill: var(--SelectColor);
+    }
+  }
+  &__listSort {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
   }
 
   &__title {
     font: 500 24px/1.1 $font;
     font-size: 24px;
     line-height: 35.57px;
-    text-align: left;
+    color: var(--text);
 
   }
 
@@ -66,31 +116,61 @@
 
   &__nftContainer {
     display: flex;
-    width: 1142px;
+    //width: 1142px;
+    width:1142px ;
     height: 726px;
     border-radius: 10px;
-    background-color: $Container;
+    background-color: var(--Container);
   }
 
   &__nfts {
     display: flex;
     flex-direction: row;
-    gap: 2vh;
-    padding: 2vh 2vh 2vh 2vh;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 23px;
+    padding: 16px;
+  }
+  &__input {
+    padding-left: 17px;
+    border: none !important;
+    background-color: var(--Container);
+  }
+  &__arrow {
+    path {
+      stroke: var(--limeBlack);
+    }
   }
 }
+
 :global {
+
   .ant-select-selector {
-    background-color: $Container !important;
+    background-color: var(--Container) !important;
     border: none !important;
-    color: $lime !important;
+    color: var(--limeBlack) !important;
     box-shadow: unset !important;
   }
   .ant-select-selection-item {
-    font-family: $font;
+    font-family: $font !important;
+    color: var(--limeBlack) !important;
   }
   .ant-select-dropdown {
     width: 110px !important;
+    font-family: $font !important;
+    background-color: var(--wrapper);
+  }
+  .ant-select-item{
+    color: var(--text)!important;
+  }
+  .rc-virtual-list-holder-inner {
+    background-color: var(--wrapper) !important;
 
   }
+  .ant-select-item-option-selected {
+    background-color: var(--Container) !important;
+    color: var(--SelectColor) !important;
+
+  }
+
 }
