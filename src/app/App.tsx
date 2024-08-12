@@ -1,13 +1,11 @@
-import "./App.css";
-import MainPage from "../pages/MainPage/ui/MainPage.tsx";
-import AppRouter from "./router/AppRouter.tsx";
+import "./styles/index.scss";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { ReactElement } from "react";
+import routes from "./config/router/routes.tsx";
 
-const App = () => {
-  return (
-    <div>
-      <MainPage content={<AppRouter />} />
-    </div>
-  );
+const App = (): ReactElement => {
+  const router = createBrowserRouter(routes);
+  return <RouterProvider router={router} />;
 };
 
 export default App;

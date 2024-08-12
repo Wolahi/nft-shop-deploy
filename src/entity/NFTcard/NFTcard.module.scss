@@ -1,23 +1,34 @@
-@import "/src/styles/utils/variables";
+@import "/src/app/styles/utils/variables";
+@import "/src/app/styles/utils/media";
 .nft {
   &__Card {
-    width: 258px;
+    //width: 258px;
+    width: auto;
     height: 331px;
     background-color: var(--nftCard);
     border-radius: 10px;
+    @include media-custom(400px){
+      height: 280px;
+    }
   }
   &__body {
     display: flex;
     flex-direction: column;
     gap: 30px;
+    @include media-custom(400px){
+      gap: unset;
+    }
   }
 
   &__PhotoContainer {
     height: 156px;
+    @include media-custom(400px){
+      height: 130px;
+    }
   }
 
   &__Photo {
-    width: auto;
+    width: 100%;
     height: 100%;
   }
   &__Text {
@@ -69,13 +80,14 @@
     cursor: pointer;
   }
   &__CardL {
-    height: 210px;
-    width: 1090px;
+    height: 250px;
+    //width: 1090px;
+    width: 77vw;
     background-color: var(--nftCard);
     border-radius: 20px;
   }
   &__PhotoL {
-    width: 350px;
+    width: auto;
     height: auto;
     border-radius: 20px;
   }
@@ -84,6 +96,7 @@
     flex-direction: row;
     justify-content: space-between;
     gap: 10px;
+    height: 250px;
   }
   &__titleL {
     font: 500 34px $font;

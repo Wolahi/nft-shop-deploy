@@ -1,7 +1,8 @@
+import styles from "./faq.module.scss";
 const Faq = () => {
   return (
     <div>
-      <div>Net fak u</div>
+      <div className={styles.faq}>Net fak u</div>
     </div>
   );
 };

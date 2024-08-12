@@ -1,10 +1,33 @@
-@import "/src/styles/utils/variables";
+@import "/src/app/styles/utils/variables";
+@import "/src/app/styles/utils/media";
 
 .db {
+    &__Btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 125px;
+      height: 33px;
+      border-radius: 4px;
+      background-color: var(--pathSelect);
+      color: black;
+      font: $font !important;
+    }
+    &__btnText {
+      font: 500 14px $font;
+      line-height: 20.75px;
+      color: var(--wrapper);
+    }
   &__body {
     font-family: $font;
     color: var(--white);
     padding: 55px 30px 30px 20px;
+    @include media-custom(630px){
+      padding: 30px 30px 30px 20px;
+    }
+    @include media-custom(400px){
+      padding: 30px 30px 30px 30px;
+    }
   }
 
   &__content {
@@ -23,17 +46,51 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include media-custom(400px){
+      flex-direction: column;
+      gap: 10px;
+    }
   }
 
 
   &__headBottom {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    @include media-custom(570px){
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+    }
   }
 
   &__filters {
     display: flex;
     gap: 14px;
+  }
+&__sortContainer {
+  @include media-custom(800px){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 23px;
+  }
+  @include media-custom(400px){
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+  &__searchMobile {
+    display: none;
+    @include media-custom(800px){
+      display: unset;
+      width: 200px;
+    }
+    @include media-custom(630px){
+      display: unset;
+      width: 150px;
+    }
   }
 
   &__sort {
@@ -113,17 +170,81 @@
     justify-content: space-between;
 
   }
+  &__store {
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    width: 80vw;
+    @include media-custom(1450px){
+      display: unset;
+      width: unset;
+    }
+  }
 
   &__nftContainer {
     display: flex;
+    justify-content: center;
     //width: 1142px;
-    width:1142px ;
-    height: 726px;
+    width:auto ;
+    max-width: 1142px;
+    height: auto;
+    border-radius: 10px;
+    background-color: var(--Container);
+  }
+  &__nftContainerList {
+    display: flex;
+    justify-content: center;
+    //width: 1142px;
+    width:auto ;
+    height: auto;
     border-radius: 10px;
     background-color: var(--Container);
   }
 
   &__nfts {
+    //display: flex;
+    //flex-direction: row;
+    //justify-content: center;
+    //flex-wrap: wrap;
+    //gap: 23px;
+    //padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(4, 250px);
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 23px;
+    padding: 16px 40px;
+    @include media-custom(1679px){
+      display: grid;
+      grid-template-columns: repeat(4, 250px);
+      flex-direction: row;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 23px;
+    }
+    @include media-custom(1410px){
+      grid-template-columns: repeat(3, 250px);
+    }
+    @include media-custom(1148px){
+      grid-template-columns: repeat(2, 250px);
+    }
+    @include media-custom(900px){
+      grid-template-columns: repeat(3, 250px);
+    }
+    @include media-custom(888px){
+      grid-template-columns: repeat(2, 250px);
+    }
+    @include media-custom(608px){
+      grid-template-columns: repeat(1, 250px);
+    }
+    @include media-custom(400px){
+      grid-template-columns: repeat(1, 215px);
+    }
+
+  }
+  &__nftsList {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -141,6 +262,16 @@
       stroke: var(--limeBlack);
     }
   }
+  &__filtersButton {
+    display: none;
+    @include media-custom(900px){
+      display: unset;
+    }
+    @include media-custom(630px){
+      display: none;
+    }
+  }
+
 }
 
 :global {
@@ -171,6 +302,23 @@
     background-color: var(--Container) !important;
     color: var(--SelectColor) !important;
 
+  }
+  .ant-drawer-content-wrapper {
+    width: 249px !important;
+  }
+  .ant-drawer-body {
+    padding: unset !important;
+    background-color: var(--wrapper);
+    border-right: 1px solid var(--underline);
+  }
+  .ant-drawer-header {
+    background-color: var(--wrapper);
+  }
+  .ant-drawer-title {
+    display: flex;
+    justify-content: center;
+    font: 500 22px $font !important;
+    color: var(--text);
   }
 
 }

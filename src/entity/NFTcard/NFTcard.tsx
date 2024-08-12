@@ -1,8 +1,7 @@
-import { INFT } from "../../components/NFTS/interfaces/INFT.ts";
 import styles from "../NFTcard/NFTcard.module.scss";
-import NftPhoto from "../../assets/nftPhoto.png";
+import NftPhoto from "../../shared/assets/nftPhoto.png";
+import { NFTprops } from "./interfaces/NFTprops.ts";
 
-type NFTprops = { nft: INFT; sort: string };
 const NFTcard = ({ nft, sort }: NFTprops) => {
   if (sort === "grid") {
     return (
