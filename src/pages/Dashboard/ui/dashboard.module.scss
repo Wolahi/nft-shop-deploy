@@ -21,7 +21,7 @@
   &__body {
     font-family: $font;
     color: var(--white);
-    padding: 55px 30px 30px 20px;
+    padding: 30px 30px 30px 20px;
     @include media-custom(630px){
       padding: 30px 30px 30px 20px;
     }
@@ -33,6 +33,7 @@
   &__content {
     display: flex;
     flex-direction: column;
+    min-height: calc(100vh - 125px);
     gap: 20px;
   }
 
@@ -172,12 +173,14 @@
   }
   &__store {
     display: flex;
+    flex-direction: column;
     align-content: center;
     align-items: center;
-    justify-content: center;
+    flex-grow: 1;
+    justify-content: flex-start;
     width: 80vw;
     @include media-custom(1450px){
-      display: unset;
+      //display: unset; //ne uveren
       width: unset;
     }
   }
@@ -186,7 +189,8 @@
     display: flex;
     justify-content: center;
     //width: 1142px;
-    width:auto ;
+    //width:auto ;
+    width: 100%;
     max-width: 1142px;
     height: auto;
     border-radius: 10px;
@@ -200,6 +204,10 @@
     height: auto;
     border-radius: 10px;
     background-color: var(--Container);
+  }
+
+  &__pagContainer {
+    flex-shrink: 0;
   }
 
   &__nfts {
@@ -271,6 +279,18 @@
       display: none;
     }
   }
+  &__pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__paginationFilter {
+    display: flex;
+    gap: 5px;
+  }
+  &__totalItems {
+    color: var(--totalItems);
+  }
 
 }
 
@@ -319,6 +339,14 @@
     justify-content: center;
     font: 500 22px $font !important;
     color: var(--text);
+  }
+  .ant-float-btn-body {
+    background-color: var(--Container) !important;
+  }
+  .ant-float-btn-icon {
+    path{
+      fill: var(--SelectColor);
+    }
   }
 
 }

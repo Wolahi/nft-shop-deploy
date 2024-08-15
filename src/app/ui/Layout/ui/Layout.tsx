@@ -13,7 +13,7 @@ import { useTheme } from "../../../module/hooks/useTheme/useTheme.ts";
 import { Outlet, useLocation, useNavigate } from "react-router";
 import { clsx } from "clsx";
 import Footer from "../../../../widgets/Footer/ui/Footer.tsx";
-import Aside from "../../../../widgets/Aside/ui/Aside.tsx";
+import Aside from "../../../../features/Aside/ui/Aside.tsx";
 
 const { Header, Content, Sider } = LayoutAntd;
 

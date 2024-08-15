@@ -1,3 +1,3 @@
-import { INFT } from "../../../pages/Dashboard/config/interfaces/INFT.ts";
+import { INFTB } from "../../../shared/config/interfaces/INFTB.ts";
 
-export type NFTprops = { nft: INFT; sort: string };
+export type NFTprops = { nft: INFTB; sort: string };

@@ -1,7 +1,14 @@
 @import "/src/app/styles/utils/variables";
 @import "/src/app/styles/utils/media";
 
-
+.root {
+  @include media-custom(630px){
+    display: grid;
+    grid-template-rows: 1fr auto;
+    height: 100%;
+    min-height: 100vh;
+  }
+}
 .main {
   background-color: var(--bg);
   &__logo {

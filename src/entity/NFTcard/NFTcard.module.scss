@@ -28,6 +28,7 @@
   }
 
   &__Photo {
+    border-radius: 10px 10px 0 0;
     width: 100%;
     height: 100%;
   }
@@ -79,12 +80,18 @@
     border-radius: 28px;
     cursor: pointer;
   }
+  &__price {
+    font-size: 14px;
+  }
   &__CardL {
     height: 250px;
     //width: 1090px;
     width: 77vw;
     background-color: var(--nftCard);
     border-radius: 20px;
+    @include media-custom(1400px){
+      width: 69vw;
+    }
   }
   &__PhotoL {
     width: auto;
@@ -101,11 +108,17 @@
   &__titleL {
     font: 500 34px $font;
     color: var(--limeBlack);
+    @include media-custom(1400px){
+      font-size: 22px;
+    }
   }
   &__AuthorL{
     font: 400 24px/1.1 $font;
     line-height: 20.75px;
     color: var(--grayBlue);
+    @include media-custom(1400px){
+      font-size: 18px;
+    }
   }
   &__contentL {
     display: flex;
@@ -115,6 +128,10 @@
     display: flex;
     flex-direction: column ;
     padding: 10px;
+    @include media-custom(1400px){
+      display: flex;
+      justify-content: space-between;
+    }
   }
   &__priceBlockL {
     display: flex;
@@ -132,7 +149,10 @@
     gap: 10px;
   }
   &__priceTypeL{
-font-size: 24px;
+  font-size: 24px;
+    @include media-custom(1400px){
+      font-size: 16px;
+    }
   }
   &__priceContainerL {
     display: flex;
@@ -143,6 +163,10 @@ font-size: 24px;
     border: solid 1px var(--limeBlack);
     border-radius: 28px;
     cursor: pointer;
+    @include media-custom(1400px){
+      width: 77px;
+      height: 29px;
+    }
   }
   &__blurContainerL {
     position: absolute;
@@ -154,8 +178,32 @@ font-size: 24px;
     -webkit-box-shadow:0 0 10px var(--blur);
     box-shadow:0 0 20px var(--blur);
     filter: opacity(10%);
+    @include media-custom(1400px){
+      width: 77px;
+      height: 29px;
+    }
   }
   &__priceL {
     font-size: 24px;
+    @include media-custom(1400px){
+      font-size: 14px;
+    }
+  }
+  &__textContainer {
+    display: flex;
+    flex-direction: column;
+  }
+  &__mobile {
+    display: none;
+    @include media-custom(1400px){
+      display: unset;
+    }
+  }
+  &__desktop {
+    display: flex;
+    @include media-custom(1400px){
+      display: none;
+    }
+
   }
 }

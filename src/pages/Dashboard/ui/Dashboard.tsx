@@ -1,6 +1,5 @@
 import styles from "./dashboard.module.scss";
-import { Button, FloatButton, Select } from "antd";
-import { NFTS } from "../config/NFTS.ts";
+import { Button, FloatButton, Pagination, Select } from "antd";
 import NFTcard from "../../../entity/NFTcard/NFTcard.tsx";
 import ListIcon from "../../../shared/assets/dashboard/listIcon.svg?react";
 import GridIcon from "../../../shared/assets/dashboard/gridIcon.svg?react";
@@ -10,6 +9,7 @@ import ModalForm from "../../../widgets/ModalForm/ui/ModalForm.tsx";
 import SearchForm from "../../../widgets/SearchForm/ui/SearchForm.tsx";
 import { FilterOutlined } from "@ant-design/icons";
 import AsideDrawer from "../../../widgets/AsideDrawer/ui/AsideDrawer.tsx";
+import useGetNfts from "../module/useGetNfts.ts";
 
 const handleChange = (value: string) => {
   console.log(`selected ${value}`);
@@ -17,12 +17,14 @@ const handleChange = (value: string) => {
 const Dashboard = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
-
+  const { nfts, pags, changePage } = useGetNfts();
   const [sort, setSort] = useState("grid");
   const switchSort = () => {
     console.log(sort);
     setSort((cur) => (cur === "list" ? "grid" : "list"));
   };
+
+  console.log(nfts, pags);
 
   return (
     <div className={styles.db__body}>
@@ -124,7 +126,8 @@ const Dashboard = () => {
             <div
               className={sort == "grid" ? styles.db__nfts : styles.db__nftsList}
             >
-              {NFTS.map((nft) => {
+              {/*{NFTS.map((nft) => {*/}
+              {nfts.map((nft) => {
                 if (nft.id !== 0) {
                   return (
                     <div key={nft.id} className={styles.db__nftItems}>
@@ -134,6 +137,29 @@ const Dashboard = () => {
                 }
               })}
             </div>
+          </div>
+        </div>
+        <div className={styles.db__pagContainer}>
+          <div className={styles.db__pagination}>
+            <div className={styles.db__paginationFilter}>
+              Results 1 - {pags.total_items}
+              <div>
+                <div className={styles.db__totalItems}>
+                  {" "}
+                  out of {pags.total_items}
+                </div>
+              </div>
+            </div>
+
+            <Pagination
+              align="end"
+              defaultCurrent={1}
+              pageSize={8}
+              total={pags.total_items}
+              onChange={(page) => {
+                changePage(page);
+              }}
+            />
           </div>
         </div>
       </div>

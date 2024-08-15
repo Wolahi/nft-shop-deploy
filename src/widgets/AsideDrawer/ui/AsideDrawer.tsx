@@ -1,5 +1,5 @@
-import { Button, Drawer, Space } from "antd";
-import Aside from "../../Aside/ui/Aside.tsx";
+import { Drawer } from "antd";
+import Aside from "../../../features/Aside/ui/Aside.tsx";
 
 const AsideDrawer = ({
   open,
@@ -8,21 +8,12 @@ const AsideDrawer = ({
   open: boolean;
   setOpen: (e: boolean) => void;
 }) => {
-  const showDrawer = () => {
-    setOpen(true);
-  };
-
   const onClose = () => {
     setOpen(false);
   };
 
   return (
     <>
-      <Space>
-        <Button type="primary" onClick={showDrawer}>
-          Open
-        </Button>
-      </Space>
       <Drawer
         title="Filters"
         placement="left"
