@@ -2,30 +2,30 @@
 @import "/src/app/styles/utils/media";
 
 .db {
-    &__Btn {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 125px;
-      height: 33px;
-      border-radius: 4px;
-      background-color: var(--pathSelect);
-      color: black;
-      font: $font !important;
-    }
-    &__btnText {
-      font: 500 14px $font;
-      line-height: 20.75px;
-      color: var(--wrapper);
-    }
+  &__Btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 125px;
+    height: 33px;
+    border-radius: 4px;
+    background-color: var(--pathSelect);
+    color: black;
+    font: $font !important;
+  }
+  &__btnText {
+    font: 500 14px $font;
+    line-height: 20.75px;
+    color: var(--wrapper);
+  }
   &__body {
     font-family: $font;
     color: var(--white);
     padding: 30px 30px 30px 20px;
-    @include media-custom(630px){
+    @include media-custom(630px) {
       padding: 30px 30px 30px 20px;
     }
-    @include media-custom(400px){
+    @include media-custom(400px) {
       padding: 30px 30px 30px 30px;
     }
   }
@@ -47,18 +47,17 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include media-custom(400px){
+    @include media-custom(400px) {
       flex-direction: column;
       gap: 10px;
     }
   }
 
-
   &__headBottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    @include media-custom(570px){
+    @include media-custom(570px) {
       flex-direction: column;
       align-items: flex-start;
       gap: 10px;
@@ -69,26 +68,26 @@
     display: flex;
     gap: 14px;
   }
-&__sortContainer {
-  @include media-custom(800px){
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 23px;
+  &__sortContainer {
+    @include media-custom(800px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 23px;
+    }
+    @include media-custom(400px) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
   }
-  @include media-custom(400px){
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-}
   &__searchMobile {
     display: none;
-    @include media-custom(800px){
+    @include media-custom(800px) {
       display: unset;
       width: 200px;
     }
-    @include media-custom(630px){
+    @include media-custom(630px) {
       display: unset;
       width: 150px;
     }
@@ -110,7 +109,7 @@
     justify-content: center;
     width: 44px;
     height: 37px;
-    border-radius: 10px 0  0 10px;
+    border-radius: 10px 0 0 10px;
     background-color: unset;
   }
   &__gridSelected {
@@ -119,7 +118,7 @@
     justify-content: center;
     width: 44px;
     height: 37px;
-    border-radius: 10px 0  0 10px;
+    border-radius: 10px 0 0 10px;
     background-color: var(--sortSwitch);
   }
   &__listSelected {
@@ -128,26 +127,26 @@
     justify-content: center;
     width: 44px;
     height: 37px;
-    border-radius: 0 10px  10px 0;
+    border-radius: 0 10px 10px 0;
     background-color: var(--sortSwitch);
   }
   &__gridIcon {
-    path{
+    path {
       fill: var(--text);
     }
   }
   &__gridIselected {
-    path{
+    path {
       fill: var(--SelectColor);
     }
   }
   &__listIcon {
-    path{
+    path {
       fill: var(--text);
     }
   }
   &__listIselected {
-    path{
+    path {
       fill: var(--SelectColor);
     }
   }
@@ -163,13 +162,11 @@
     font-size: 24px;
     line-height: 35.57px;
     color: var(--text);
-
   }
 
   &__titleContainer {
     display: flex;
     justify-content: space-between;
-
   }
   &__store {
     display: flex;
@@ -179,7 +176,7 @@
     flex-grow: 1;
     justify-content: flex-start;
     width: 80vw;
-    @include media-custom(1450px){
+    @include media-custom(1450px) {
       //display: unset; //ne uveren
       width: unset;
     }
@@ -200,7 +197,7 @@
     display: flex;
     justify-content: center;
     //width: 1142px;
-    width:auto ;
+    width: 100%;
     height: auto;
     border-radius: 10px;
     background-color: var(--Container);
@@ -224,7 +221,7 @@
     flex-wrap: wrap;
     gap: 23px;
     padding: 16px 40px;
-    @include media-custom(1679px){
+    @include media-custom(1679px) {
       display: grid;
       grid-template-columns: repeat(4, 250px);
       flex-direction: row;
@@ -232,25 +229,24 @@
       flex-wrap: wrap;
       gap: 23px;
     }
-    @include media-custom(1410px){
+    @include media-custom(1410px) {
       grid-template-columns: repeat(3, 250px);
     }
-    @include media-custom(1148px){
+    @include media-custom(1148px) {
       grid-template-columns: repeat(2, 250px);
     }
-    @include media-custom(900px){
+    @include media-custom(900px) {
       grid-template-columns: repeat(3, 250px);
     }
-    @include media-custom(888px){
+    @include media-custom(888px) {
       grid-template-columns: repeat(2, 250px);
     }
-    @include media-custom(608px){
+    @include media-custom(608px) {
       grid-template-columns: repeat(1, 250px);
     }
-    @include media-custom(400px){
+    @include media-custom(400px) {
       grid-template-columns: repeat(1, 215px);
     }
-
   }
   &__nftsList {
     display: flex;
@@ -259,6 +255,10 @@
     flex-wrap: wrap;
     gap: 23px;
     padding: 16px;
+    @include media-custom($mediaWidthMob) {
+      gap: 16px;
+    }
+
   }
   &__input {
     padding-left: 17px;
@@ -272,10 +272,10 @@
   }
   &__filtersButton {
     display: none;
-    @include media-custom(900px){
+    @include media-custom(900px) {
       display: unset;
     }
-    @include media-custom(630px){
+    @include media-custom(630px) {
       display: none;
     }
   }
@@ -291,11 +291,9 @@
   &__totalItems {
     color: var(--totalItems);
   }
-
 }
 
 :global {
-
   .ant-select-selector {
     background-color: var(--Container) !important;
     border: none !important;
@@ -311,17 +309,15 @@
     font-family: $font !important;
     background-color: var(--wrapper);
   }
-  .ant-select-item{
-    color: var(--text)!important;
+  .ant-select-item {
+    color: var(--text) !important;
   }
   .rc-virtual-list-holder-inner {
     background-color: var(--wrapper) !important;
-
   }
   .ant-select-item-option-selected {
     background-color: var(--Container) !important;
     color: var(--SelectColor) !important;
-
   }
   .ant-drawer-content-wrapper {
     width: 249px !important;
@@ -344,9 +340,8 @@
     background-color: var(--Container) !important;
   }
   .ant-float-btn-icon {
-    path{
+    path {
       fill: var(--SelectColor);
     }
   }
-
 }

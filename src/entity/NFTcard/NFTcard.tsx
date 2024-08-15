@@ -37,8 +37,10 @@ const NFTcard = ({ nft, sort }: NFTprops) => {
   return (
     <div className={styles.nft__CardL}>
       <div className={styles.nft__bodyL}>
-        <div className={styles.nft__contentL}>
+        <div className={styles.nft__PhotoContainerL}>
           <img src={NftPhoto} alt="" className={styles.nft__PhotoL} />
+        </div>
+        <div className={styles.nft__contentL}>
           <div className={styles.nft__textL}>
             {/*<div className={styles.nft__titleL}>{nft.title}</div>*/}
             <div className={styles.nft__textContainer}>
@@ -46,35 +48,19 @@ const NFTcard = ({ nft, sort }: NFTprops) => {
               {/*<div className={styles.nft__AuthorL}> {nft.author}</div>*/}
               <div className={styles.nft__AuthorL}> {nft.autor}</div>
             </div>
-            <div className={styles.nft__mobile}>
-              <div className={styles.nft__priceBlockL}>
-                <div className={styles.nft__priceContentL}>
-                  <div className={styles.nft__priceTypeL}>
-                    {/*{nft.priceType} <span>Price</span>*/}
-                    {nft.typePrice}
-                  </div>
-                  <div className={styles.nft__priceContainerL}>
-                    <div className={styles.nft__blurContainerL} />
-                    <div className={styles.nft__priceL}>
-                      {nft.price} <span>ETH</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
-        </div>
-        <div className={styles.nft__desktop}>
-          <div className={styles.nft__priceBlockL}>
-            <div className={styles.nft__priceContentL}>
-              <div className={styles.nft__priceTypeL}>
-                {/*{nft.priceType} <span>Price</span>*/}
-                {nft.typePrice}
-              </div>
-              <div className={styles.nft__priceContainerL}>
-                <div className={styles.nft__blurContainerL} />
-                <div className={styles.nft__priceL}>
-                  {nft.price} <span>ETH</span>
+          <div className={styles.nft__descriprion}>
+            <div className={styles.nft__priceBlockL}>
+              <div className={styles.nft__priceContentL}>
+                <div className={styles.nft__priceTypeL}>
+                  {/*{nft.priceType} <span>Price</span>*/}
+                  {nft.typePrice}
+                </div>
+                <div className={styles.nft__priceContainerL}>
+                  <div className={styles.nft__blurContainerL} />
+                  <div className={styles.nft__priceL}>
+                    {nft.price} <span>ETH</span>
+                  </div>
                 </div>
               </div>
             </div>

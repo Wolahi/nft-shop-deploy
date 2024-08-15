@@ -2,7 +2,7 @@
 @import "/src/app/styles/utils/media";
 
 .root {
-  @include media-custom(630px){
+  @include media-custom(630px) {
     display: grid;
     grid-template-rows: 1fr auto;
     height: 100%;
@@ -12,7 +12,7 @@
 .main {
   background-color: var(--bg);
   &__logo {
-    path{
+    path {
       fill: var(--logo);
     }
   }
@@ -24,16 +24,16 @@
     height: 70px;
     background-color: var(--wrapper);
     border-bottom: solid var(--underline) 1px;
-    @include media-custom(630px){
-     display: none;
+    @include media-custom(630px) {
+      display: none;
     }
   }
-  &__leftPart{
+  &__leftPart {
     display: flex;
     align-items: center;
     gap: 50px;
   }
-  &__rightPart{
+  &__rightPart {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -45,10 +45,10 @@
     width: 322px;
     border-radius: 10px;
     font-family: $font;
-    @include media-custom($mediaWidthTablet){
+    @include media-custom($mediaWidthTablet) {
       width: 140px;
     }
-    @include media-custom(800px){
+    @include media-custom(800px) {
       display: none;
     }
   }
@@ -67,7 +67,7 @@
     background-color: var(--Container);
   }
   &__icon {
-    path{
+    path {
       fill: var(--text);
     }
   }
@@ -77,7 +77,7 @@
     align-items: center;
     gap: 12px;
   }
-  &__profilePhoto{
+  &__profilePhoto {
     display: flex;
     width: 30px;
     height: 30px;
@@ -86,8 +86,8 @@
     font-family: $font;
     color: var(--text);
     width: auto;
-    @include media-custom($mediaWidthTablet){
-    display: none;
+    @include media-custom($mediaWidthTablet) {
+      display: none;
     }
   }
 
@@ -139,7 +139,7 @@
   .ant-menu-horizontal {
     padding: 0 0 0 11vh !important;
     gap: 10px;
-    @include media-custom(900px){
+    @include media-custom(900px) {
       padding: unset !important;
     }
   }
@@ -155,13 +155,12 @@
     border-bottom: solid var(--underline) 1px;
     border-radius: 0 !important;
     font: 500 16px $font;
-    .ant-menu-title-content{
+    .ant-menu-title-content {
       font: 500 16px $font !important;
     }
   }
   .ant-menu-submenu-arrow {
-    color: var(--text)
-    !important;
+    color: var(--text) !important;
   }
   .ant-menu-item-selected {
     background-color: unset !important;
@@ -172,7 +171,6 @@
     .ant-menu-title-content {
       color: var(--pathSelect) !important;
       font: 500 16px $font !important;
-
     }
   }
   .ant-layout-sider-children {
@@ -181,14 +179,15 @@
   .ant-layout-sider {
     height: 100vh !important;
     background: var(--wrapper) !important;
-    position: sticky!important;
+    position: sticky !important;
     top: 0 !important;
     overflow-y: scroll;
-    overflow-x:hidden;
-    @include media-custom(900px){
+    overflow-x: hidden;
+    @include media-custom(900px) {
       display: none;
     }
-  }::-webkit-scrollbar {
-     display: none;
-   }
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
 }
