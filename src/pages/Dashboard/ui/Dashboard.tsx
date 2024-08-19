@@ -1,19 +1,16 @@
 import styles from "./dashboard.module.scss";
-import { Button, FloatButton, Pagination, Select } from "antd";
+import { Button, FloatButton, Pagination } from "antd";
 import NFTcard from "../../../entity/NFTcard/NFTcard.tsx";
 import ListIcon from "../../../shared/assets/dashboard/listIcon.svg?react";
 import GridIcon from "../../../shared/assets/dashboard/gridIcon.svg?react";
-import ArrowFilters from "../../../shared/assets/dashboard/arrowFilters.svg?react";
 import { useState } from "react";
 import ModalForm from "../../../widgets/ModalForm/ui/ModalForm.tsx";
 import SearchForm from "../../../widgets/SearchForm/ui/SearchForm.tsx";
 import { FilterOutlined } from "@ant-design/icons";
 import AsideDrawer from "../../../widgets/AsideDrawer/ui/AsideDrawer.tsx";
 import useGetNfts from "../module/useGetNfts.ts";
+import TopFilters from "../../../features/TopFilters/TopFilters.tsx";
 
-const handleChange = (value: string) => {
-  console.log(`selected ${value}`);
-};
 const Dashboard = () => {
   const [open, setOpen] = useState<boolean>(false);
   const [openDrawer, setOpenDrawer] = useState<boolean>(false);
@@ -42,38 +39,7 @@ const Dashboard = () => {
             <ModalForm open={open} setOpen={setOpen} />
           </div>
           <div className={styles.db__headBottom}>
-            <div className={styles.db__filters}>
-              <Select
-                defaultValue="recent"
-                style={{ width: 78, height: 37 }}
-                onChange={handleChange}
-                options={[
-                  { value: "recent", label: "Recent" },
-                  { value: "earlier", label: "Earlier" },
-                ]}
-                suffixIcon={<ArrowFilters className={styles.db__arrow} />}
-              />
-              <Select
-                defaultValue="lowtohigh"
-                style={{ width: 101, height: 37 }}
-                onChange={handleChange}
-                options={[
-                  { value: "lowtohigh", label: "Low to high" },
-                  { value: "hightolow", label: "High to low" },
-                ]}
-                suffixIcon={<ArrowFilters className={styles.db__arrow} />}
-              />
-              <Select
-                defaultValue="all"
-                style={{ width: "auto", height: 37 }}
-                onChange={handleChange}
-                options={[
-                  { value: "all", label: "All" },
-                  { value: "none", label: "None" },
-                ]}
-                suffixIcon={<ArrowFilters className={styles.db__arrow} />}
-              />
-            </div>
+            <TopFilters />
             <div className={styles.db__sortContainer}>
               <div className={styles.db__searchMobile}>
                 <SearchForm />
@@ -150,16 +116,17 @@ const Dashboard = () => {
                 </div>
               </div>
             </div>
-
-            <Pagination
-              align="end"
-              defaultCurrent={1}
-              pageSize={8}
-              total={pags.total_items}
-              onChange={(page) => {
-                changePage(page);
-              }}
-            />
+            <div>
+              <Pagination
+                align="end"
+                defaultCurrent={1}
+                pageSize={8}
+                total={pags.total_items}
+                onChange={(page) => {
+                  changePage(page);
+                }}
+              />
+            </div>
           </div>
         </div>
       </div>

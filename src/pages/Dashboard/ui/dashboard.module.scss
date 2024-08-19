@@ -344,4 +344,42 @@
       fill: var(--SelectColor);
     }
   }
+  .ant-pagination {
+    color: white !important;
+    min-width: unset !important;
+    li {
+      width: 21px !important;
+    }
+  }
+  .ant-pagination-item {
+    margin-right: 0 !important;
+    margin-top: 2px !important ;
+    font: 400 14px $font !important;
+    line-height: 20.75px !important ;
+    display: flex;
+    padding: 0 !important;
+    justify-content: center !important;
+    align-items: center !important;
+    a {
+      color: var(--text)!important;
+      padding: 0 !important;
+      width: 34px !important;
+    }
+  }
+  .ant-pagination-item-active {
+    background-color: unset !important;
+    border: none !important;
+    margin-bottom: 1px !important ;
+    padding: 1px !important;
+    a {
+      color: var(--SelectColor)!important;
+    }::before {
+       content: "Page ";
+     }
+  }
+  .anticon {
+    path {
+      fill: var(--text);
+    }
+  }
 }
