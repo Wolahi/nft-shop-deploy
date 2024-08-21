@@ -7,13 +7,13 @@ const useCreateNft = () => {
   const [newNFT, setNewNfts] = useState<INFTPost>();
 
   const createNFT = async (data: INFTPost): Promise<void> => {
-    const tempData = {
-      ...data,
-      image: new File([data.image], "idi_nahyi", {
-        type: "image/png",
-      }),
-    };
-    const res: AxiosResponse<INFTPost> = await $api.post(`/nfts/`, tempData, {
+    const formData = new FormData();
+
+    Object.keys(data).forEach((key ) => {
+      formData.append(key, data[key as keyof INFTPost] as never);
+    })
+
+    const res: AxiosResponse<INFTPost> = await $api.post(`/nfts/`, formData, {
       headers: {
         "Content-Type": "multipart/form-data",
       },
